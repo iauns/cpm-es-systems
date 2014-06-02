@@ -40,7 +40,7 @@ public:
   /// Registers the system with the serialization system so that a system can
   /// be created on-demand during deserialization.
   template <typename T>
-  static void registerSystem()
+  void registerSystem()
   {
     // Perform a static assert on the system to make sure it has a static
     // function that grabs the name.
@@ -60,7 +60,7 @@ public:
 
   /// This is only used when testing the system. It has little practical
   /// use outside of registration tests.
-  static void clearRegisteredSystems()
+  void clearRegisteredSystems()
   {
     mSystemFactory.clearSystems();
   }
@@ -187,7 +187,7 @@ private:
   std::vector<std::string>  mSystemsToRemove;
 
   /// Factory that stores all registered systems.
-  static SystemFactory      mSystemFactory;
+  SystemFactory      mSystemFactory;
 };
 
 } // namespace CPM_ES_SYSTEMS_NS 

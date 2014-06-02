@@ -219,11 +219,11 @@ int32_t C::numExecutions = 0;
 
 TEST(EntitySystem, TimingTest)
 {
-  esys::SystemCore::clearRegisteredSystems();
-
   // Generate entity system core.
   std::shared_ptr<es::ESCore> core(new es::ESCore());
   std::shared_ptr<esys::SystemCore> systems(new esys::SystemCore);
+
+  systems->clearRegisteredSystems();
 
   // Register systems. All of the above text regarding components applies
   // to systems as well.

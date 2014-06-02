@@ -4,8 +4,6 @@
 
 namespace CPM_ES_SYSTEMS_NS {
 
-SystemFactory SystemCore::mSystemFactory;
-
 void SystemCore::runSystems(CPM_ES_NS::ESCoreBase& core, uint64_t referenceTime)
 {
   for (SystemItem& sys : mSystems)
